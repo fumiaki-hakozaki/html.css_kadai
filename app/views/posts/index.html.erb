@@ -1,2 +1,19 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<h1>あなたのつぶやき一覧</h1>
+
+<table>
+    <tr>
+      <th>つぶやき</th>
+    </tr>
+
+<% @posts.each do |post| %>
+    <tr>
+        <td><%= post.content %></td>
+
+        <td><%= link_to '詳細を確認する', post_path(post.id) %></td>
+        <td><%= link_to 'つぶやきを言い換えよう♪', edit_post_path(post.id) %></td>
+        <td><%= link_to 'つぶやきとバイバイする？',post_path(post.id),method: :delete %></td>
+    </tr>
+<% end %>
+</table>
+
+<%= link_to'新たにつぶやきを投稿する！',new_post_path %>
