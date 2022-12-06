@@ -1,3 +1,4 @@
+<%= image_tag "image.jpg" %>
 <h1>あなたのつぶやき一覧</h1>
 
 <p><%= notice %>
@@ -11,7 +12,6 @@
     <tr>
         <td><%= post.content %></td>
 
-        <td><%= link_to '詳細を確認する', post_path(post.id) %></td>
         <td><%= link_to 'つぶやきを言い換えよう♪', edit_post_path(post.id),data: { confirm: '本当に言い換えますよ？'} %></td>
         <td><%= link_to 'つぶやきとバイバイする？',post_path(post.id),method: :delete ,data: { confirm: 'さよならしていいの？？'} %></td>
     </tr>
