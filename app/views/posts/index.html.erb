@@ -1,17 +1,13 @@
 <%= image_tag "image.jpg" %>
 <h1>あなたのつぶやき一覧</h1>
-
 <p><%= notice %>
-
 <table>
     <tr>
       <th>つぶやき</th>
     </tr>
-
 <% @posts.each do |post| %>
     <tr>
         <td><%= post.content %></td>
-
         <td><%= link_to 'つぶやきを言い換えよう♪', edit_post_path(post.id),data: { confirm: '本当に言い換えますよ？'} %></td>
         <td><%= link_to 'つぶやきとバイバイする？',post_path(post.id),method: :delete ,data: { confirm: 'さよならしていいの？？'} %></td>
     </tr>
